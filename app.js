@@ -1,5 +1,5 @@
-// VibeHall Portal App
-// Dynamic integration with PolyMind API
+// PolyMind Intelligence Portal
+// Dynamic integration with PolyMind AI backend
 
 const API_BASE = "https://polymind-production.up.railway.app";
 
@@ -47,7 +47,7 @@ async function updateStats() {
             }
         }
     } catch (error) {
-        console.error("VibeHall Feed Offline:", error);
+        console.error("PolyMind Intelligence Feed Offline:", error);
         const statusEl = document.getElementById('network-status');
         if (statusEl) {
             statusEl.innerText = "OFFLINE";
