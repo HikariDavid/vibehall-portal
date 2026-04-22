@@ -8,7 +8,7 @@
             "method": "GET",
             "price": "0.005",
             "currency": "USDC",
-            "chain": "base | solana",
+            "chain": "base",
             "description": "Top 20 Polymarket markets by 24h volume with live prices and metadata",
             "tags": [
                 "polymarket",
@@ -19,7 +19,7 @@
             "extensions": {
                 "bazaar": {
                     "discoverable": true,
-                    "category": "prediction-markets",
+                    "category": "defi-trading",
                     "inputSchema": {
                         "queryParams": {
                             "limit": {
@@ -37,7 +37,7 @@
             "method": "GET",
             "price": "0.03",
             "currency": "USDC",
-            "chain": "base | solana",
+            "chain": "base",
             "description": "Full multi-model AI analysis of a single Polymarket market — includes edge calculation and fair value",
             "tags": [
                 "analysis",
@@ -48,7 +48,7 @@
             "extensions": {
                 "bazaar": {
                     "discoverable": true,
-                    "category": "ai-agents",
+                    "category": "ai-machine-learning",
                     "inputSchema": {
                         "pathParams": {
                             "market_id": {
@@ -66,7 +66,7 @@
             "method": "GET",
             "price": "0.02",
             "currency": "USDC",
-            "chain": "base | solana",
+            "chain": "base",
             "description": "Insider signal detection across top 20 Polymarket markets — identifies unusual trading patterns including volume spikes",
             "tags": [
                 "signals",
@@ -77,7 +77,7 @@
             "extensions": {
                 "bazaar": {
                     "discoverable": true,
-                    "category": "alpha-signals",
+                    "category": "data-analytics",
                     "inputSchema": {
                         "queryParams": {}
                     }
@@ -86,11 +86,10 @@
         }
     ],
     "chains": [
-        "base",
-        "solana"
+        "base"
     ],
     "facilitators": [
-        "https://x402.autoincentive.xyz"
+        "https://api.cdp.coinbase.com/platform/v2/x402"
     ],
     "contact": "@KisekiHikari"
 }
