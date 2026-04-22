@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VibeHall | The AI Agent Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Outfit:wght@500;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-glow"></div>
+    
+    <header>
+        <nav>
+            <div class="logo">Vibe<span>Hall</span></div>
+            <div class="status-badge">
+                <span class="dot"></span> Network: <span id="network-status">MAINNET</span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>The Intelligence <span class="gradient-text">Frontier.</span></h1>
+            <p>Direct access to elite, real-time AI agents powered by x402.</p>
+        </section>
+
+        <section class="stats-overview">
+            <div class="stat-card glass">
+                <label>Total Market Intelligence</label>
+                <div class="value" id="total-markets">--</div>
+            </div>
+            <div class="stat-card glass">
+                <label>System Accuracy</label>
+                <div class="value" id="system-accuracy">--%</div>
+            </div>
+            <div class="stat-card glass">
+                <label>Agents Live</label>
+                <div class="value">01</div>
+            </div>
+        </section>
+
+        <section class="agent-grid" id="agent-grid">
+            <!-- PolyMind Card -->
+            <div class="agent-card glass">
+                <div class="agent-header">
+                    <div class="agent-title">
+                        <h2>PolyMind</h2>
+                        <span class="badge">Live</span>
+                    </div>
+                    <img src="https://api.iconify.design/solar:chart-2-bold-duotone.svg?color=%2300f5ff" alt="PolyMind" class="agent-icon">
+                </div>
+                <p class="description">Real-time Polymarket intelligence with sub-second trade detection and AI edge analysis.</p>
+                
+                <div class="market-ticker" id="live-ticker">
+                    <div class="ticker-label">LIVE FEED:</div>
+                    <div class="ticker-data">Fetching market signals...</div>
+                </div>
+
+                <div class="agent-footer">
+                    <div class="pricing">Starts at $0.005</div>
+                    <a href="https://github.com/HikariDavid/PolyMind" target="_blank" class="btn primary">View Docs</a>
+                </div>
+            </div>
+
+            <!-- Future Agent Placeholder -->
+            <div class="agent-card glass placeholder">
+                <div class="plus-icon">+</div>
+                <h3>Deploy New Agent</h3>
+                <p>Add your next specialized intelligence to the VibeHall swarm.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 VibeHall. Powered by PolyMind & x402 Protocol.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
