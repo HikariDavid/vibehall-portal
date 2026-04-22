@@ -4,20 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PolyMind | Institutional Prediction Intelligence</title>
+    <title>PolyMind | Institutional Prediction Market Intelligence</title>
+    <meta name="description"
+        content="PolyMind delivers sub-second prediction market intelligence powered by proprietary fine-tuned LLMs. Real-time edge detection, automated accuracy verification, and non-custodial payments via x402.">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Outfit:wght@500;800&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Outfit:wght@500;700;800&display=swap"
         rel="stylesheet">
 </head>
 
 <body>
     <div class="background-glow"></div>
 
+    <!-- NAVIGATION -->
     <header>
         <nav>
             <div class="logo">Poly<span>Mind</span></div>
+            <div class="nav-links">
+                <a href="#how-it-works">How It Works</a>
+                <a href="#why-us">Why Us</a>
+                <a href="#live-dashboard">Live Data</a>
+                <a href="#pricing">Pricing</a>
+            </div>
             <div class="status-badge">
                 <span class="dot"></span> System: <span id="network-status">OPERATIONAL</span>
             </div>
@@ -25,62 +35,201 @@
     </header>
 
     <main>
+        <!-- HERO -->
         <section class="hero">
-            <h1>Market Dominance <span class="gradient-text">Engine.</span></h1>
-            <p>Proprietary fine-tuned LLMs providing sub-second edge on global prediction markets.</p>
-        </section>
-
-        <section class="stats-overview">
-            <div class="stat-card glass">
-                <label>Total Market Intelligence</label>
-                <div class="value" id="total-markets">--</div>
-            </div>
-            <div class="stat-card glass">
-                <label>System Accuracy</label>
-                <div class="value" id="system-accuracy">--%</div>
-            </div>
-            <div class="stat-card glass">
-                <label>Agents Live</label>
-                <div class="value">01</div>
+            <div class="hero-tag">PREDICTION MARKET INTELLIGENCE</div>
+            <h1>We Don't Guess.<br><span class="gradient-text">We Compute.</span></h1>
+            <p class="hero-sub">PolyMind is an institutional-grade intelligence engine for Polymarket. Our proprietary
+                fine-tuned models analyze every trade in real-time, detect edge before anyone else, and prove it with
+                automated on-chain accuracy tracking.</p>
+            <div class="hero-buttons">
+                <a href="https://github.com/HikariDavid/PolyMind" target="_blank" class="btn primary">Read the Docs</a>
+                <a href="#live-dashboard" class="btn secondary">See Live Data &darr;</a>
             </div>
         </section>
 
-        <section class="agent-grid" id="agent-grid">
-            <!-- PolyMind Card -->
-            <div class="agent-card glass">
-                <div class="agent-header">
-                    <div class="agent-title">
-                        <h2>PolyMind Alpha</h2>
-                        <span class="badge">Institutional</span>
+        <!-- HOW IT WORKS -->
+        <section class="section" id="how-it-works">
+            <div class="section-tag">THE ENGINE</div>
+            <h2>How PolyMind Works</h2>
+            <p class="section-sub">Three layers of intelligence working in parallel, 24/7.</p>
+            <div class="features-grid">
+                <div class="feature-card glass">
+                    <div class="feature-icon">&#9889;</div>
+                    <h3>Real-Time Trade Detection</h3>
+                    <p>Our WebSocket engine is connected directly to the Polymarket CLOB. We detect whale trades, volume
+                        spikes, and liquidity shifts in <strong>under 500 milliseconds</strong>. When a $50K order hits
+                        the book, our subscribers know before the chart even moves.</p>
+                </div>
+                <div class="feature-card glass">
+                    <div class="feature-icon">&#129504;</div>
+                    <h3>Fine-Tuned AI Reasoning</h3>
+                    <p>Every market is analyzed by our proprietary fine-tuned LLM stack. It calculates a <strong>Fair
+                            Value</strong>, identifies the <strong>Edge</strong> between market price and true
+                        probability, and outputs a directional signal with confidence scoring. This isn't a chatbot
+                        guessing — it's a quantitative model.</p>
+                </div>
+                <div class="feature-card glass">
+                    <div class="feature-icon">&#128279;</div>
+                    <h3>Proof-of-Work Verification</h3>
+                    <p>Every signal we issue is logged and automatically verified against the real market resolution.
+                        Our public <strong>Accuracy Report</strong> is updated in real-time. We don't hide behind
+                        disclaimers — we publish our win rate for the world to see.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY US -->
+        <section class="section dark-section" id="why-us">
+            <div class="section-tag">COMPETITIVE EDGE</div>
+            <h2>Why PolyMind?</h2>
+            <p class="section-sub">Every existing prediction market tool gives you the same stale data with a different
+                UI. We built something fundamentally different.</p>
+            <div class="comparison-grid">
+                <div class="compare-card glass">
+                    <div class="compare-header bad">Others</div>
+                    <ul>
+                        <li>Delayed data from public APIs</li>
+                        <li>No AI analysis, just raw numbers</li>
+                        <li>No track record or accountability</li>
+                        <li>Generic models with no market training</li>
+                        <li>$0.01+ per basic data query</li>
+                    </ul>
+                </div>
+                <div class="compare-card glass highlighted">
+                    <div class="compare-header good">PolyMind</div>
+                    <ul>
+                        <li>Sub-second WebSocket trade streaming</li>
+                        <li>Fine-tuned LLM edge & fair value analysis</li>
+                        <li>Public Proof-of-Work accuracy tracking</li>
+                        <li>Proprietary models trained on market dynamics</li>
+                        <li>Starting at $0.005 — lowest in the ecosystem</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- LIVE DASHBOARD -->
+        <section class="section" id="live-dashboard">
+            <div class="section-tag">LIVE INTELLIGENCE</div>
+            <h2>Real-Time Dashboard</h2>
+            <p class="section-sub">This data is pulled directly from the PolyMind production engine, right now.</p>
+
+            <div class="stats-overview">
+                <div class="stat-card glass">
+                    <label>Markets Tracked</label>
+                    <div class="value" id="total-markets">--</div>
+                </div>
+                <div class="stat-card glass">
+                    <label>AI Accuracy</label>
+                    <div class="value" id="system-accuracy">TRACKING</div>
+                </div>
+                <div class="stat-card glass">
+                    <label>Engine Status</label>
+                    <div class="value" id="engine-status">BETA</div>
+                </div>
+                <div class="stat-card glass">
+                    <label>Active Agents</label>
+                    <div class="value">01</div>
+                </div>
+            </div>
+
+            <!-- Agent Card -->
+            <div class="agent-showcase">
+                <div class="agent-card glass">
+                    <div class="agent-header">
+                        <div class="agent-title">
+                            <h3>PolyMind Alpha</h3>
+                            <span class="badge live-badge">LIVE</span>
+                        </div>
+                        <img src="https://api.iconify.design/solar:chart-2-bold-duotone.svg?color=%2300f5ff"
+                            alt="PolyMind" class="agent-icon">
                     </div>
-                    <img src="https://api.iconify.design/solar:chart-2-bold-duotone.svg?color=%2300f5ff" alt="PolyMind"
-                        class="agent-icon">
-                </div>
-                <p class="description">Fine-tuned reasoning engine with proprietary trade-detection vectors and
-                    automated accuracy verification.</p>
+                    <p class="agent-desc">Our flagship intelligence agent. Connects to Polymarket's CLOB via WebSocket,
+                        runs every market through our fine-tuned reasoning stack, issues directional signals with edge
+                        calculations, and logs every prediction for automated accuracy verification.</p>
 
-                <div class="market-ticker" id="live-ticker">
-                    <div class="ticker-label">LIVE FEED:</div>
-                    <div class="ticker-data">Fetching market signals...</div>
-                </div>
+                    <div class="market-ticker" id="live-ticker">
+                        <div class="ticker-label">LIVE MARKET FEED</div>
+                        <div class="ticker-data" id="ticker-content">Connecting to PolyMind engine...</div>
+                    </div>
 
-                <div class="agent-footer">
-                    <div class="pricing">Starts at $0.005</div>
-                    <a href="https://github.com/HikariDavid/PolyMind" target="_blank" class="btn primary">View Docs</a>
+                    <div class="agent-capabilities">
+                        <div class="capability"><span>&#9889;</span> Sub-500ms Latency</div>
+                        <div class="capability"><span>&#129504;</span> AI Fair Value</div>
+                        <div class="capability"><span>&#128202;</span> Edge Detection</div>
+                        <div class="capability"><span>&#128279;</span> Auto-Verified</div>
+                    </div>
+
+                    <div class="agent-footer">
+                        <div class="pricing-tag">From <strong>$0.005</strong> per query</div>
+                        <a href="https://github.com/HikariDavid/PolyMind" target="_blank" class="btn primary">API
+                            Documentation</a>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Future Agent Placeholder -->
-            <div class="agent-card glass placeholder">
-                <div class="plus-icon">+</div>
-                <h3>Deploy New Agent</h3>
-                <p>Add your next specialized intelligence to the VibeHall swarm.</p>
+        <!-- PRICING -->
+        <section class="section" id="pricing">
+            <div class="section-tag">TRANSPARENT PRICING</div>
+            <h2>Pay Per Intelligence</h2>
+            <p class="section-sub">No subscriptions. No API keys to manage. Just send USDC on Base or Solana via x402
+                and get instant intelligence.</p>
+            <div class="pricing-grid">
+                <div class="price-card glass">
+                    <h4>Hot Markets</h4>
+                    <div class="price">$0.005</div>
+                    <p>Top 20 markets by volume with live prices</p>
+                </div>
+                <div class="price-card glass">
+                    <h4>Insider Signals</h4>
+                    <div class="price">$0.02</div>
+                    <p>AI-detected whale activity & volume anomalies</p>
+                </div>
+                <div class="price-card glass featured">
+                    <h4>Full Analysis</h4>
+                    <div class="price">$0.03</div>
+                    <p>Fair value, edge, direction, confidence & risks</p>
+                </div>
+                <div class="price-card glass">
+                    <h4>Portfolio Hedge</h4>
+                    <div class="price">$0.25</div>
+                    <p>AI-generated hedging strategies for your positions</p>
+                </div>
+            </div>
+            <div class="pricing-note">
+                <p><strong>Accuracy Report</strong> &amp; <strong>Arbitrage Scanner</strong> — Always Free. We earn your
+                    trust before your money.</p>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="section cta-section">
+            <h2>Ready to Trade With an Edge?</h2>
+            <p class="section-sub">PolyMind is live on the x402 protocol. Any AI agent or developer can start querying
+                intelligence right now.</p>
+            <div class="hero-buttons">
+                <a href="https://github.com/HikariDavid/PolyMind" target="_blank" class="btn primary">Get Started</a>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 PolyMind Corporation. Non-Custodial Intelligence via x402 Protocol.</p>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo">Poly<span>Mind</span></div>
+                <p>Institutional Prediction Market Intelligence</p>
+            </div>
+            <div class="footer-links">
+                <a href="https://github.com/HikariDavid/PolyMind" target="_blank">GitHub</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#how-it-works">How It Works</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 PolyMind. Non-Custodial Intelligence via x402 Protocol. Payments on Base &amp; Solana.</p>
+        </div>
     </footer>
 
     <script src="app.js"></script>
