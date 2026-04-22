@@ -15,4 +15,5 @@ User-agent: Anthropic-AI
 Allow: /
 
 # x402 / Bazaar discovery
+Allow: /.well-known/x402.json
 Sitemap: https://vibehall-portal.vercel.app/sitemap.xml

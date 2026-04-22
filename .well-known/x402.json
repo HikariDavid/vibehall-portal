@@ -1,0 +1,96 @@
+{
+    "name": "PolyMind",
+    "description": "Real-time Polymarket intelligence for AI agents",
+    "version": "1.0.0",
+    "endpoints": [
+        {
+            "path": "https://polymind-production-c405.up.railway.app/markets/hot",
+            "method": "GET",
+            "price": "0.005",
+            "currency": "USDC",
+            "chain": "base | solana",
+            "description": "Top 20 Polymarket markets by 24h volume with live prices and metadata",
+            "tags": [
+                "polymarket",
+                "prediction",
+                "markets",
+                "trading"
+            ],
+            "extensions": {
+                "bazaar": {
+                    "discoverable": true,
+                    "category": "prediction-markets",
+                    "inputSchema": {
+                        "queryParams": {
+                            "limit": {
+                                "type": "integer",
+                                "description": "Number of markets to return (max 50, default 20)",
+                                "required": false
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "path": "https://polymind-production-c405.up.railway.app/analyze/{market_id}",
+            "method": "GET",
+            "price": "0.03",
+            "currency": "USDC",
+            "chain": "base | solana",
+            "description": "Full multi-model AI analysis of a single Polymarket market — includes edge calculation and fair value",
+            "tags": [
+                "analysis",
+                "ai",
+                "edge",
+                "recommendation"
+            ],
+            "extensions": {
+                "bazaar": {
+                    "discoverable": true,
+                    "category": "ai-agents",
+                    "inputSchema": {
+                        "pathParams": {
+                            "market_id": {
+                                "type": "string",
+                                "description": "Polymarket market ID (get from /markets/hot)",
+                                "required": true
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "path": "https://polymind-production-c405.up.railway.app/signals",
+            "method": "GET",
+            "price": "0.02",
+            "currency": "USDC",
+            "chain": "base | solana",
+            "description": "Insider signal detection across top 20 Polymarket markets — identifies unusual trading patterns including volume spikes",
+            "tags": [
+                "signals",
+                "insider",
+                "alpha",
+                "volume-spike"
+            ],
+            "extensions": {
+                "bazaar": {
+                    "discoverable": true,
+                    "category": "alpha-signals",
+                    "inputSchema": {
+                        "queryParams": {}
+                    }
+                }
+            }
+        }
+    ],
+    "chains": [
+        "base",
+        "solana"
+    ],
+    "facilitators": [
+        "https://x402.autoincentive.xyz"
+    ],
+    "contact": "@KisekiHikari"
+}
