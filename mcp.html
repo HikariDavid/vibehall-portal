@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PolyMind | Agent & MCP Integration Guide</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Outfit:wght@500;700;800&family=JetBrains+Mono:wght@500&display=swap"
+        rel="stylesheet">
+    <style>
+        .integration-hero {
+            padding: 8rem 0 4rem;
+            text-align: center;
+        }
+
+        .mcp-visual {
+            background: var(--surface-0);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            padding: 4rem;
+            margin: 4rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            gap: 2rem;
+        }
+
+        .node {
+            width: 120px;
+            height: 120px;
+            background: rgba(0, 245, 255, 0.05);
+            border: 1px solid var(--border-glow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            position: relative;
+        }
+
+        .connector {
+            height: 2px;
+            flex-grow: 1;
+            background: linear-gradient(90deg, var(--accent-main), var(--accent-alt));
+            opacity: 0.3;
+        }
+
+        .step-block {
+            margin-bottom: 4rem;
+        }
+
+        .step-num {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            color: rgba(255, 255, 255, 0.05);
+            line-height: 1;
+            margin-bottom: -1.5rem;
+        }
+
+        .step-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .guide-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .bazaar-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(0, 255, 157, 0.1);
+            border: 1px solid var(--accent-alt);
+            color: var(--accent-alt);
+            border-radius: 100px;
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background-glow"></div>
+    <header>
+        <nav>
+            <div class="logo">Poly<span>Mind</span></div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="docs.html">API Docs</a>
+                <a href="report.html">Live Report</a>
+            </div>
+            <div class="status-badge">
+                <span class="dot"></span> MCP Ready
+            </div>
+        </nav>
+    </header>
+
+    <main class="section">
+        <section class="integration-hero">
+            <div class="bazaar-badge">x402 Bazaar Ecosystem</div>
+            <h1>The Intelligence<br><span class="gradient-text">Integration Guide</span></h1>
+            <p class="hero-sub">PolyMind is built for the agentic era. We use the Model Context Protocol (MCP) to let
+                your AI read, reason, and act on prediction market data natively.</p>
+
+            <div class="mcp-visual">
+                <div class="node">Your Agent<br>(Claude/Cursor)</div>
+                <div class="connector"></div>
+                <div class="node" style="border-color: var(--accent-alt)">x402 Bazaar<br>(Discovery)</div>
+                <div class="connector"></div>
+                <div class="node" style="background: rgba(112, 0, 255, 0.05); border-color: var(--accent-neon)">
+                    PolyMind<br>(Intelligence)</div>
+            </div>
+        </section>
+
+        <section class="guide-content">
+            <div class="step-block">
+                <div class="step-num">01</div>
+                <div class="step-title">Discovery via x402</div>
+                <p>PolyMind is natively discoverable on the x402 Bazaar. Any autonomous agent can fetch our
+                    <code>/.well-known/x402.json</code> footprint to understand our endpoints, prices, and capabilities
+                    without a human in the loop.</p>
+                <div class="code-block">
+                    <div class="code-label">Bazaar Discovery URL</div>
+                    <pre><code>https://vibehall-portal.vercel.app/.well-known/x402.json</code></pre>
+                </div>
+            </div>
+
+            <div class="step-block">
+                <div class="step-num">02</div>
+                <div class="step-title">Setup with Claude Desktop</div>
+                <p>Import PolyMind as a native tool in Claude. This allows Claude to call <code>analyze_market</code> or
+                    <code>detect_signals</code> directly within your chat.</p>
+                <div class="code-block" style="margin-bottom: 1rem;">
+                    <div class="code-label">claude_desktop_config.json</div>
+                    <pre><code>{
+  "mcpServers": {
+    "polymind": {
+      "command": "python",
+      "args": ["mcp_server.py"],
+      "env": {
+        "POLYMIND_API_URL": "https://polymind-production-c405.up.railway.app"
+      }
+    }
+  }
+}</code></pre>
+                </div>
+                <a href="https://github.com/HikariDavid/PolyMind" target="_blank" class="btn secondary">Get
+                    mcp_server.py</a>
+            </div>
+
+            <div class="step-block">
+                <div class="step-num">03</div>
+                <div class="step-title">Autonomous Payments</div>
+                <p>Since PolyMind is non-custodial, your agent must handle its own x402 payment proof. The agent fetches
+                    a payment requirement (402 response), pays via the x402 facilitator, and re-submits the request with
+                    the <code>X-Payment</code> header.</p>
+                <div class="code-block">
+                    <div class="code-label">Agent Logic Flow</div>
+                    <pre><code>1. Agent calls /analyze
+2. PolyMind returns 402 + Payment Details
+3. Agent pays USDC via x402 Facilitator
+4. Agent retries with X-Payment: [token]
+5. PolyMind returns Intelligence JSON</code></pre>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2026 PolyMind. Agentic Interoperability Standard.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

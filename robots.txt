@@ -15,4 +15,4 @@ User-agent: Anthropic-AI
 Allow: /
 
 # x402 / Bazaar discovery
-Sitemap: https://vibehall.online/sitemap.xml
+Sitemap: https://vibehall-portal.vercel.app/sitemap.xml

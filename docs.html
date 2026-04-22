@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PolyMind | API Documentation</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Outfit:wght@500;700;800&family=JetBrains+Mono:wght@500&display=swap"
+        rel="stylesheet">
+    <style>
+        .docs-container {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 4rem;
+            padding: 6rem 0;
+        }
+
+        .docs-sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+
+        .sidebar-nav {
+            list-style: none;
+        }
+
+        .sidebar-nav li {
+            margin-bottom: 0.8rem;
+        }
+
+        .sidebar-nav a {
+            color: var(--text-tertiary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .sidebar-nav a:hover,
+        .sidebar-nav a.active {
+            color: var(--accent-main);
+        }
+
+        .sidebar-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .sidebar-title:first-child {
+            border-top: none;
+            padding-top: 0;
+        }
+
+        .docs-content {
+            max-width: 900px;
+        }
+
+        .docs-content h2 {
+            font-size: 2.2rem;
+            margin: 3rem 0 1.5rem;
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 1rem;
+        }
+
+        .docs-content h3 {
+            font-size: 1.4rem;
+            margin: 2rem 0 1rem;
+            color: var(--accent-main);
+        }
+
+        .docs-content p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .endpoint-block {
+            background: var(--surface-0);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .method-tag {
+            background: var(--accent-main);
+            color: var(--bg-base);
+            font-size: 0.75rem;
+            font-weight: 800;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            vertical-align: middle;
+            margin-right: 0.8rem;
+        }
+
+        .path {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.1rem;
+            color: var(--text-primary);
+        }
+
+        .price-badge {
+            float: right;
+            color: var(--text-tertiary);
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .param-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+
+        .param-table th {
+            text-align: left;
+            color: var(--text-tertiary);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            padding: 0.8rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .param-table td {
+            padding: 1rem 0.8rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            font-size: 0.9rem;
+        }
+
+        .param-name {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--accent-alt);
+            font-weight: 600;
+        }
+
+        .param-type {
+            color: var(--text-tertiary);
+            font-size: 0.8rem;
+            font-style: italic;
+        }
+
+        .code-snippet {
+            margin: 2rem 0;
+            position: relative;
+        }
+
+        .code-snippet pre {
+            background: #000;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+        }
+
+        .code-snippet code {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            color: #d1d5db;
+            line-height: 1.6;
+        }
+
+        .copy-docs-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--surface-1);
+            border: 1px solid var(--border-light);
+            color: var(--text-tertiary);
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 1024px) {
+            .docs-container {
+                grid-template-columns: 1fr;
+            }
+
+            .docs-sidebar {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background-glow"></div>
+    <header>
+        <nav>
+            <div class="logo">Poly<span>Mind</span></div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="mcp.html">MCP Guide</a>
+                <a href="report.html">Live Performance</a>
+            </div>
+            <div class="status-badge">
+                <span class="dot"></span> PolyMind v1.0
+            </div>
+        </nav>
+    </header>
+
+    <main class="docs-container section">
+        <aside class="docs-sidebar">
+            <div class="sidebar-title">Getting Started</div>
+            <ul class="sidebar-nav">
+                <li><a href="#authentication" class="active">Authentication</a></li>
+                <li><a href="#pricing">Pricing Model</a></li>
+            </ul>
+            <div class="sidebar-title">Core Endpoints</div>
+            <ul class="sidebar-nav">
+                <li><a href="#hot-markets">Hot Markets</a></li>
+                <li><a href="#analyze">Analyze Market</a></li>
+                <li><a href="#signals">Insider Signals</a></li>
+            </ul>
+            <div class="sidebar-title">Analytics</div>
+            <ul class="sidebar-nav">
+                <li><a href="#accuracy">Accuracy Report</a></li>
+            </ul>
+        </aside>
+
+        <section class="docs-content">
+            <div class="section-tag">API REFERENCE</div>
+            <h1>The PolyMind API</h1>
+            <p>PolyMind is a stateless, x402-native intelligence API. Every request is verified on-chain against the
+                x402 protocol, ensuring non-custodial, peer-to-peer data commerce.</p>
+
+            <h2 id="authentication">Authentication</h2>
+            <p>PolyMind does not use API keys. Authentication is handled via the <code>X-Payment</code> HTTP header.
+                This header must contain a valid x402 payment token proof for the specific endpoint cost.</p>
+            <div class="endpoint-block">
+                <span class="path">X-Payment: [x402-token]</span>
+                <p style="margin-top:1rem; font-size:0.9rem">Get proofs from the x402 facilitator: <a
+                        href="https://x402.autoincentive.xyz" target="_blank"
+                        style="color:var(--accent-main)">x402.autoincentive.xyz</a></p>
+            </div>
+
+            <h2 id="hot-markets">Hot Markets</h2>
+            <p>Fetch the top 20 Polymarket markets by 24h volume. This data is refreshed every 60 seconds from the CLOB
+                WebSocket buffer.</p>
+            <div class="endpoint-block">
+                <span class="price-badge">$0.005 USDC</span>
+                <span class="method-tag">GET</span>
+                <span class="path">/markets/hot</span>
+
+                <table class="param-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="param-name">limit</span></td>
+                            <td><span class="param-type">integer</span></td>
+                            <td>Max markets to return (default 20, max 50)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2 id="analyze">Analyze Market</h2>
+            <p>Perform deep AI analysis on a specific market ID. This triggers our multi-model reasoning engine to
+                calculate Fair Value and Edge.</p>
+            <div class="endpoint-block">
+                <span class="price-badge">$0.03 USDC</span>
+                <span class="method-tag">GET</span>
+                <span class="path">/analyze/{market_id}</span>
+
+                <table class="param-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="param-name">market_id</span></td>
+                            <td><span class="param-type">string</span></td>
+                            <td>The unique Polymarket ID (Required)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2 id="signals">Insider Signals</h2>
+            <p>Detect unusual whale activity over the last 1000 trades. Identifies volume clusters that precede price
+                movements.</p>
+            <div class="endpoint-block">
+                <span class="price-badge">$0.02 USDC</span>
+                <span class="method-tag">GET</span>
+                <span class="path">/signals</span>
+            </div>
+
+            <h2 id="accuracy">Accuracy Report</h2>
+            <p>View the live Proof-of-Work log. This endpoint is free and allows you to verify our historical
+                performance before paying for signals.</p>
+            <div class="endpoint-block">
+                <span class="price-badge">FREE</span>
+                <span class="method-tag">GET</span>
+                <span class="path">/accuracy-report</span>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2026 PolyMind. Documentation v1.0</p>
+        </div>
+    </footer>
+</body>
+
+</html>
