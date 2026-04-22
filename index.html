@@ -43,6 +43,7 @@
                 <a href="#why-us">Why Us</a>
                 <a href="#live-dashboard">Live Data</a>
                 <a href="#pricing">Pricing</a>
+                <a href="#integrate">Integrate</a>
             </div>
             <div class="status-badge">
                 <span class="dot"></span> System: <span id="network-status">OPERATIONAL</span>
@@ -220,6 +221,132 @@
             </div>
         </section>
 
+        <!-- INTEGRATE / MCP SECTION -->
+        <section class="section" id="integrate">
+            <div class="section-tag">DEVELOPER ACCESS</div>
+            <h2>Connect Your Agent</h2>
+            <p class="section-sub">PolyMind speaks x402. No API keys, no accounts. Send USDC and receive intelligence.
+                Three ways to connect.</p>
+
+            <div class="integrate-grid">
+                <!-- Direct HTTP -->
+                <div class="integrate-card glass">
+                    <div class="integrate-header">
+                        <div class="integrate-icon">🌐</div>
+                        <div>
+                            <h4>Direct HTTP (x402)</h4>
+                            <p class="integrate-sub">Any language, any agent. Pay-per-call with USDC.</p>
+                        </div>
+                    </div>
+                    <div class="code-block">
+                        <div class="code-label">Base URL</div>
+                        <pre><code>https://polymind-production-c405.up.railway.app</code></pre>
+                    </div>
+                    <div class="code-block">
+                        <div class="code-label">Get Hot Markets ($0.005 USDC)</div>
+                        <pre><code>GET /markets/hot
+Header: X-Payment: &lt;x402-token&gt;</code></pre>
+                    </div>
+                    <div class="code-block">
+                        <div class="code-label">Full AI Analysis ($0.03 USDC)</div>
+                        <pre><code>GET /analyze/{market_id}
+Header: X-Payment: &lt;x402-token&gt;</code></pre>
+                    </div>
+                    <a href="https://github.com/HikariDavid/PolyMind" target="_blank" class="btn secondary"
+                        style="margin-top:1.5rem">View Full API Docs</a>
+                </div>
+
+                <!-- MCP -->
+                <div class="integrate-card glass">
+                    <div class="integrate-header">
+                        <div class="integrate-icon">🤖</div>
+                        <div>
+                            <h4>Claude Desktop (MCP)</h4>
+                            <p class="integrate-sub">Add PolyMind as a native tool to Claude.</p>
+                        </div>
+                    </div>
+                    <div class="code-block">
+                        <div class="code-label">claude_desktop_config.json</div>
+                        <pre><code>{
+  "mcpServers": {
+    "polymind": {
+      "command": "python",
+      "args": ["mcp_server.py"]
+    }
+  }
+}</code></pre>
+                    </div>
+                    <div class="code-block">
+                        <div class="code-label">Discovery (Auto-Indexed by Bazaar)</div>
+                        <pre><code>GET /.well-known/x402.json</code></pre>
+                    </div>
+                    <a href="https://github.com/HikariDavid/PolyMind" target="_blank" class="btn secondary"
+                        style="margin-top:1.5rem">MCP Setup Guide</a>
+                </div>
+
+                <!-- Accuracy Report (Free) -->
+                <div class="integrate-card glass featured-integrate">
+                    <div class="integrate-header">
+                        <div class="integrate-icon">📊</div>
+                        <div>
+                            <h4>Live Accuracy Report</h4>
+                            <p class="integrate-sub">Always FREE. Our public Proof-of-Work endpoint.</p>
+                        </div>
+                    </div>
+                    <div class="code-block">
+                        <div class="code-label">No payment required</div>
+                        <pre><code>GET /accuracy-report</code></pre>
+                    </div>
+                    <div class="accuracy-live glass" id="accuracy-live-block">
+                        <div class="acc-row"><span>Status</span><span id="acc-status">Loading...</span></div>
+                        <div class="acc-row"><span>Signals Logged</span><span id="acc-total">--</span></div>
+                        <div class="acc-row"><span>Resolved</span><span id="acc-resolved">--</span></div>
+                        <div class="acc-row"><span>Accuracy</span><span id="acc-rate">TRACKING</span></div>
+                    </div>
+                    <a href="https://polymind-production-c405.up.railway.app/accuracy-report" target="_blank"
+                        class="btn primary" style="margin-top:1.5rem">View Live Report &rarr;</a>
+                </div>
+            </div>
+
+            <!-- QUICK START -->
+            <div class="quickstart-block glass" style="margin-top:3rem">
+                <div class="quickstart-header">
+                    <div>
+                        <div class="section-tag" style="display:inline-block;margin-bottom:0.5rem">QUICK START</div>
+                        <h3
+                            style="font-family:'Outfit',sans-serif;font-size:1.6rem;font-weight:700;margin-bottom:0.4rem">
+                            Copy. Paste. Your Agent Has an Edge.</h3>
+                        <p style="color:var(--text-tertiary);font-size:0.9rem">Everything your agent needs. Set your
+                            x402 token, run it, done.</p>
+                    </div>
+                    <button class="copy-btn" onclick="copyQuickStart()" id="copy-btn">📋 Copy</button>
+                </div>
+                <div class="code-block" style="margin-top:1.5rem;margin-bottom:0">
+                    <div class="code-label">Python · Claude · AutoGen · LangChain · any framework</div>
+                    <pre id="quickstart-code"><code>import httpx
+
+POLYMIND_BASE = "https://polymind-production-c405.up.railway.app"
+X402_TOKEN = "YOUR_X402_PAYMENT_TOKEN"  # Get at: https://x402.autoincentive.xyz
+
+headers = {"X-Payment": X402_TOKEN}
+
+# Get hottest markets ($0.005 USDC)
+markets = httpx.get(f"{POLYMIND_BASE}/markets/hot", headers=headers).json()
+
+# Run AI analysis on top market ($0.03 USDC)
+market_id = markets["markets"][0]["id"]
+analysis = httpx.get(f"{POLYMIND_BASE}/analyze/{market_id}", headers=headers).json()
+
+# Check live accuracy — FREE, no payment needed
+accuracy = httpx.get(f"{POLYMIND_BASE}/accuracy-report").json()
+
+print(f"Direction: {analysis['direction']} | Confidence: {analysis['confidence']}")
+print(f"Edge: {analysis['edge']} | Fair Value: {analysis['ai_fair_value']}")
+print(f"Engine: {accuracy['status']}")</code></pre>
+                </div>
+            </div>
+        </section>
+
         <!-- CTA -->
         <section class="section cta-section">
             <h2>Ready to Trade With an Edge?</h2>
@@ -239,8 +366,11 @@
             </div>
             <div class="footer-links">
                 <a href="https://github.com/HikariDavid/PolyMind" target="_blank">GitHub</a>
+                <a href="#integrate">Integrate</a>
                 <a href="#pricing">Pricing</a>
                 <a href="#how-it-works">How It Works</a>
+                <a href="https://polymind-production-c405.up.railway.app/accuracy-report" target="_blank">Accuracy
+                    Report</a>
             </div>
         </div>
         <div class="footer-bottom">

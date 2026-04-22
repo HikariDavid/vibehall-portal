@@ -814,3 +814,46 @@ footer {
         align-items: flex-start;
     }
 }
+/* === INTEGRATE SECTION === */
+.integrate-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+.integrate-card { display: flex; flex-direction: column; }
+.integrate-header { display: flex; align-items: flex-start; gap: 1.2rem; margin-bottom: 2rem; }
+.integrate-icon { font-size: 1.8rem; line-height: 1; flex-shrink: 0; margin-top: 0.2rem; }
+.integrate-header h4 { font-family: 'Outfit', sans-serif; font-size: 1.2rem; font-weight: 700; margin-bottom: 0.3rem; }
+.integrate-sub { color: var(--text-tertiary); font-size: 0.85rem; }
+
+.code-block { margin-bottom: 1.2rem; }
+.code-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 0.5rem; }
+.code-block pre { background: #000; border: 1px solid var(--border-light); border-radius: var(--radius-sm); padding: 1rem 1.2rem; overflow-x: auto; }
+.code-block code { font-family: 'JetBrains Mono', 'Fira Code', monospace; font-size: 0.82rem; color: var(--accent-main); white-space: pre; }
+
+.featured-integrate { border-color: rgba(0, 255, 157, 0.15); background: rgba(0, 255, 157, 0.02); }
+.featured-integrate h4 { color: var(--accent-alt); }
+
+.accuracy-live { padding: 1.5rem; border-radius: var(--radius-md); margin-top: 1.5rem; }
+.acc-row { display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid var(--border-light); font-size: 0.85rem; }
+.acc-row:last-child { border-bottom: none; }
+.acc-row span:first-child { color: var(--text-tertiary); }
+.acc-row span:last-child { color: var(--text-primary); font-weight: 600; font-family: 'Outfit', sans-serif; }
+
+/* === QUICK START === */
+.quickstart-block { padding: 3rem; }
+.quickstart-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 2rem; }
+.copy-btn {
+    flex-shrink: 0;
+    background: var(--surface-1);
+    border: 1px solid var(--border-light);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.7rem 1.5rem;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    letter-spacing: 0.5px;
+}
+.copy-btn:hover { border-color: var(--accent-main); color: var(--accent-main); }
+.copy-btn.copied { background: rgba(0, 255, 157, 0.1); border-color: var(--accent-alt); color: var(--accent-alt); }
+#quickstart-code code { color: #e2e8f0; }
+#quickstart-code code .comment { color: var(--text-tertiary); }
