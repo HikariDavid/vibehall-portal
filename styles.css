@@ -857,3 +857,28 @@ footer {
 .copy-btn.copied { background: rgba(0, 255, 157, 0.1); border-color: var(--accent-alt); color: var(--accent-alt); }
 #quickstart-code code { color: #e2e8f0; }
 #quickstart-code code .comment { color: var(--text-tertiary); }
+
+/* === CONVERSION OPTIMIZATIONS === */
+.pulse-dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: var(--accent-alt);
+    border-radius: 50%;
+    margin-right: 8px;
+    box-shadow: 0 0 10px var(--accent-alt);
+    animation: engine-pulse 2s infinite;
+    vertical-align: middle;
+}
+
+@keyframes engine-pulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.5); opacity: 1; box-shadow: 0 0 15px var(--accent-alt); }
+    100% { transform: scale(1); opacity: 0.8; }
+}
+
+.hero h1 { line-height: 1.1; letter-spacing: -2px; }
+.hero-tag { letter-spacing: 3px; color: var(--accent-main); font-weight: 800; font-size: 0.8rem; margin-bottom: 1.5rem; }
+
+.price-card.featured { border: 1px solid var(--accent-main); box-shadow: 0 0 30px rgba(0, 245, 255, 0.1); transform: scale(1.05); }
+.price-card.featured::after { content: 'MOST POPULAR'; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--accent-main); color: var(--bg-base); font-size: 0.6rem; font-weight: 800; padding: 2px 10px; border-radius: 100px; letter-spacing: 1px; }
