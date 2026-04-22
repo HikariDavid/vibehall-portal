@@ -1,8 +1,29 @@
 {
     "name": "PolyMind",
     "description": "Real-time institutional-grade Polymarket intelligence for AI agents.",
-    "version": "1.3.0",
+    "version": "1.4.0",
     "endpoints": [
+        {
+            "path": "https://polymind-production-c405.up.railway.app/",
+            "method": "GET",
+            "price": "0.005",
+            "currency": "USDC",
+            "chain": "eip155:8453",
+            "description": "PolyMind API Root Discovery",
+            "tags": [
+                "discovery"
+            ],
+            "extensions": {
+                "bazaar": {
+                    "discoverable": true,
+                    "category": "defi-trading",
+                    "inputSchema": {
+                        "type": "object",
+                        "properties": {}
+                    }
+                }
+            }
+        },
         {
             "path": "https://polymind-production-c405.up.railway.app/markets/hot",
             "method": "GET",
@@ -29,10 +50,84 @@
                     }
                 }
             }
+        },
+        {
+            "path": "https://polymind-production-c405.up.railway.app/markets/search",
+            "method": "GET",
+            "price": "0.005",
+            "currency": "USDC",
+            "chain": "eip155:8453",
+            "description": "Search Polymarket markets by keyword",
+            "tags": [
+                "search"
+            ],
+            "extensions": {
+                "bazaar": {
+                    "discoverable": true,
+                    "category": "defi-trading",
+                    "inputSchema": {
+                        "type": "object",
+                        "properties": {
+                            "q": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "path": "https://polymind-production-c405.up.railway.app/analyze",
+            "method": "GET",
+            "price": "0.03",
+            "currency": "USDC",
+            "chain": "eip155:8453",
+            "description": "AI Market analysis engine",
+            "tags": [
+                "analysis",
+                "ai"
+            ],
+            "extensions": {
+                "bazaar": {
+                    "discoverable": true,
+                    "category": "ai-machine-learning",
+                    "inputSchema": {
+                        "type": "object",
+                        "properties": {
+                            "market_id": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "path": "https://polymind-production-c405.up.railway.app/signals",
+            "method": "GET",
+            "price": "0.02",
+            "currency": "USDC",
+            "chain": "eip155:8453",
+            "description": "Insider signal detection",
+            "tags": [
+                "signals",
+                "alpha"
+            ],
+            "extensions": {
+                "bazaar": {
+                    "discoverable": true,
+                    "category": "data-analytics",
+                    "inputSchema": {
+                        "type": "object",
+                        "properties": {}
+                    }
+                }
+            }
         }
     ],
     "chains": [
-        "eip155:8453"
+        "eip155:8453",
+        "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"
     ],
     "facilitators": [
         "https://api.cdp.coinbase.com/platform/v2/x402"
