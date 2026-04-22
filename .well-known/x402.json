@@ -86,7 +86,8 @@
         }
     ],
     "chains": [
-        "base"
+        "base",
+        "solana"
     ],
     "facilitators": [
         "https://api.cdp.coinbase.com/platform/v2/x402"
