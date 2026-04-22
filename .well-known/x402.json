@@ -8,7 +8,7 @@
             "method": "GET",
             "price": "0.005",
             "currency": "USDC",
-            "chain": "base",
+            "chain": "eip155:8453",
             "description": "Top 20 Polymarket markets by 24h volume with live prices and metadata",
             "tags": [
                 "polymarket",
@@ -37,7 +37,7 @@
             "method": "GET",
             "price": "0.03",
             "currency": "USDC",
-            "chain": "base",
+            "chain": "eip155:8453",
             "description": "Full multi-model AI analysis of a single Polymarket market — includes edge calculation and fair value",
             "tags": [
                 "analysis",
@@ -66,7 +66,7 @@
             "method": "GET",
             "price": "0.02",
             "currency": "USDC",
-            "chain": "base",
+            "chain": "eip155:8453",
             "description": "Insider signal detection across top 20 Polymarket markets — identifies unusual trading patterns including volume spikes",
             "tags": [
                 "signals",
@@ -86,8 +86,8 @@
         }
     ],
     "chains": [
-        "base",
-        "solana"
+        "eip155:8453",
+        "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"
     ],
     "facilitators": [
         "https://api.cdp.coinbase.com/platform/v2/x402"
