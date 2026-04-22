@@ -4,25 +4,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PolyMind | Institutional Prediction Market Intelligence</title>
+    <title>PolyMind | Real-Time Polymarket AI Intelligence API</title>
     <meta name="description"
-        content="PolyMind delivers sub-second prediction market intelligence powered by proprietary fine-tuned LLMs. Real-time edge detection, automated accuracy verification, and non-custodial payments via x402.">
+        content="PolyMind delivers sub-second Polymarket intelligence via proprietary AI reasoning. Real-time WebSocket trade detection, edge calculation, automated accuracy verification, and non-custodial x402 payments on Base and Solana.">
+    <meta name="keywords"
+        content="Polymarket API, prediction market intelligence, AI trading signals, x402, edge detection, fair value, Polymarket analytics, AI agents, MCP server">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://vibehall.online/">
 
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://vibehall.online/">
-    <meta property="og:title" content="PolyMind | Institutional Prediction Market Intelligence">
+    <meta property="og:title" content="PolyMind | Real-Time Polymarket AI Intelligence API">
     <meta property="og:description"
-        content="PolyMind delivers sub-second prediction market intelligence powered by proprietary fine-tuned LLMs.">
+        content="Sub-second Polymarket intelligence. AI fair value, edge detection, and whale signal alerts. Pay-per-query via x402 on Base & Solana. Starting at $0.005.">
     <meta property="og:image" content="https://vibehall.online/og-image.png">
+    <meta property="og:site_name" content="PolyMind">
 
-    <!-- Twitter -->
+    <!-- Twitter Card -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://vibehall.online/">
-    <meta property="twitter:title" content="PolyMind | Institutional Prediction Market Intelligence">
+    <meta property="twitter:title" content="PolyMind | Real-Time Polymarket AI Intelligence">
     <meta property="twitter:description"
-        content="PolyMind delivers sub-second prediction market intelligence powered by proprietary fine-tuned LLMs.">
+        content="Sub-second Polymarket intelligence. AI edge detection, fair value, and accuracy-verified signals via x402.">
     <meta property="twitter:image" content="https://vibehall.online/og-image.png">
+    <meta name="twitter:creator" content="@KisekiHikari">
+
+    <!-- JSON-LD Structured Data for AI Agents & Search -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "PolyMind",
+      "url": "https://vibehall.online",
+      "description": "Institutional-grade prediction market intelligence API for Polymarket. Sub-second trade detection, AI edge and fair value calculation, automated accuracy verification via x402 payments.",
+      "applicationCategory": "FinanceApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0.005",
+        "priceCurrency": "USDC",
+        "description": "Pay-per-query via x402 protocol on Base or Solana"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "HikariDavid"
+      },
+      "sameAs": ["https://polymind-production-c405.up.railway.app/docs"]
+    }
+    </script>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -60,8 +89,9 @@
                 fine-tuned models analyze every trade in real-time, detect edge before anyone else, and prove it with
                 automated on-chain accuracy tracking.</p>
             <div class="hero-buttons">
-                <a href="https://github.com/HikariDavid/PolyMind" target="_blank" class="btn primary">Read the Docs</a>
-                <a href="#live-dashboard" class="btn secondary">See Live Data &darr;</a>
+                <a href="#integrate" class="btn primary">Connect Your Agent &rarr;</a>
+                <a href="https://polymind-production-c405.up.railway.app/accuracy-report" target="_blank"
+                    class="btn secondary">Live Accuracy Report ↗</a>
             </div>
         </section>
 
@@ -180,7 +210,7 @@
 
                     <div class="agent-footer">
                         <div class="pricing-tag">From <strong>$0.005</strong> per query</div>
-                        <a href="https://github.com/HikariDavid/PolyMind" target="_blank" class="btn primary">API
+                        <a href="https://polymind-production-c405.up.railway.app/docs" target="_blank" class="btn primary">API
                             Documentation</a>
                     </div>
                 </div>
@@ -252,7 +282,7 @@ Header: X-Payment: &lt;x402-token&gt;</code></pre>
                         <pre><code>GET /analyze/{market_id}
 Header: X-Payment: &lt;x402-token&gt;</code></pre>
                     </div>
-                    <a href="https://github.com/HikariDavid/PolyMind" target="_blank" class="btn secondary"
+                    <a href="https://polymind-production-c405.up.railway.app/docs" target="_blank" class="btn secondary"
                         style="margin-top:1.5rem">View Full API Docs</a>
                 </div>
 
@@ -280,8 +310,8 @@ Header: X-Payment: &lt;x402-token&gt;</code></pre>
                         <div class="code-label">Discovery (Auto-Indexed by Bazaar)</div>
                         <pre><code>GET /.well-known/x402.json</code></pre>
                     </div>
-                    <a href="https://github.com/HikariDavid/PolyMind" target="_blank" class="btn secondary"
-                        style="margin-top:1.5rem">MCP Setup Guide</a>
+                    <a href="https://polymind-production-c405.up.railway.app/docs" target="_blank"
+                        class="btn secondary" style="margin-top:1.5rem">MCP Setup Guide ↗</a>
                 </div>
 
                 <!-- Accuracy Report (Free) -->
@@ -353,7 +383,9 @@ print(f"Engine: {accuracy['status']}")</code></pre>
             <p class="section-sub">PolyMind is live on the x402 protocol. Any AI agent or developer can start querying
                 intelligence right now.</p>
             <div class="hero-buttons">
-                <a href="https://github.com/HikariDavid/PolyMind" target="_blank" class="btn primary">Get Started</a>
+                <a href="#integrate" class="btn primary">Start Building &rarr;</a>
+                <a href="https://polymind-production-c405.up.railway.app/docs" target="_blank" class="btn secondary">View on GitHub
+                    ↗</a>
             </div>
         </section>
     </main>
@@ -365,7 +397,7 @@ print(f"Engine: {accuracy['status']}")</code></pre>
                 <p>Institutional Prediction Market Intelligence</p>
             </div>
             <div class="footer-links">
-                <a href="https://github.com/HikariDavid/PolyMind" target="_blank">GitHub</a>
+                <a href="https://polymind-production-c405.up.railway.app/docs" target="_blank">GitHub</a>
                 <a href="#integrate">Integrate</a>
                 <a href="#pricing">Pricing</a>
                 <a href="#how-it-works">How It Works</a>

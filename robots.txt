@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Let all AI crawlers and indexers access the full site
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Anthropic-AI
+Allow: /
+
+# x402 / Bazaar discovery
+Sitemap: https://vibehall.online/sitemap.xml
