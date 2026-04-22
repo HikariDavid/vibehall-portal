@@ -1,7 +1,7 @@
 {
     "name": "PolyMind",
-    "description": "Real-time Polymarket intelligence for AI agents",
-    "version": "1.0.0",
+    "description": "Real-time institutional-grade Polymarket intelligence for AI agents. Sub-second trade detection and AI edge analysis.",
+    "version": "1.1.0",
     "endpoints": [
         {
             "path": "https://polymind-production-c405.up.railway.app/markets/hot",
@@ -33,12 +33,40 @@
             }
         },
         {
+            "path": "https://polymind-production-c405.up.railway.app/markets/search",
+            "method": "GET",
+            "price": "0.005",
+            "currency": "USDC",
+            "chain": "eip155:8453",
+            "description": "Search Polymarket markets by keyword",
+            "tags": [
+                "search",
+                "prediction",
+                "markets"
+            ],
+            "extensions": {
+                "bazaar": {
+                    "discoverable": true,
+                    "category": "defi-trading",
+                    "inputSchema": {
+                        "queryParams": {
+                            "q": {
+                                "type": "string",
+                                "description": "Search query keyword",
+                                "required": true
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
             "path": "https://polymind-production-c405.up.railway.app/analyze/{market_id}",
             "method": "GET",
             "price": "0.03",
             "currency": "USDC",
             "chain": "eip155:8453",
-            "description": "Full multi-model AI analysis of a single Polymarket market — includes edge calculation and fair value",
+            "description": "Full multi-model AI analysis of a single market — includes edge calculation and fair value",
             "tags": [
                 "analysis",
                 "ai",
@@ -53,7 +81,7 @@
                         "pathParams": {
                             "market_id": {
                                 "type": "string",
-                                "description": "Polymarket market ID (get from /markets/hot)",
+                                "description": "Polymarket market ID",
                                 "required": true
                             }
                         }
@@ -67,7 +95,7 @@
             "price": "0.02",
             "currency": "USDC",
             "chain": "eip155:8453",
-            "description": "Insider signal detection across top 20 Polymarket markets — identifies unusual trading patterns including volume spikes",
+            "description": "Insider signal detection across top 20 markets — identifies volume spikes and anomalies",
             "tags": [
                 "signals",
                 "insider",
@@ -80,6 +108,34 @@
                     "category": "data-analytics",
                     "inputSchema": {
                         "queryParams": {}
+                    }
+                }
+            }
+        },
+        {
+            "path": "https://polymind-production-c405.up.railway.app/signals/portfolio/scan",
+            "method": "POST",
+            "price": "0.10",
+            "currency": "USDC",
+            "chain": "eip155:8453",
+            "description": "Full portfolio risk analysis for your open positions",
+            "tags": [
+                "portfolio",
+                "risk",
+                "analysis"
+            ],
+            "extensions": {
+                "bazaar": {
+                    "discoverable": true,
+                    "category": "data-analytics",
+                    "inputSchema": {
+                        "body": {
+                            "type": "array",
+                            "items": {
+                                "type": "object"
+                            },
+                            "description": "List of open positions"
+                        }
                     }
                 }
             }
