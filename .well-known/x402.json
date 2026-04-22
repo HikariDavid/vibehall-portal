@@ -1,7 +1,7 @@
 {
     "name": "PolyMind",
     "description": "Real-time institutional-grade Polymarket intelligence for AI agents. Sub-second trade detection and AI edge analysis.",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "endpoints": [
         {
             "path": "https://polymind-production-c405.up.railway.app/markets/hot",
@@ -61,12 +61,31 @@
             }
         },
         {
+            "path": "https://polymind-production-c405.up.railway.app/analyze",
+            "method": "GET",
+            "price": "0.03",
+            "currency": "USDC",
+            "chain": "eip155:8453",
+            "description": "AI Market analysis engine portal",
+            "tags": [
+                "analysis",
+                "ai"
+            ],
+            "extensions": {
+                "bazaar": {
+                    "discoverable": true,
+                    "category": "ai-machine-learning",
+                    "inputSchema": {}
+                }
+            }
+        },
+        {
             "path": "https://polymind-production-c405.up.railway.app/analyze/{market_id}",
             "method": "GET",
             "price": "0.03",
             "currency": "USDC",
             "chain": "eip155:8453",
-            "description": "Full multi-model AI analysis of a single market — includes edge calculation and fair value",
+            "description": "Full multi-model AI analysis of a specific market",
             "tags": [
                 "analysis",
                 "ai",
@@ -95,7 +114,7 @@
             "price": "0.02",
             "currency": "USDC",
             "chain": "eip155:8453",
-            "description": "Insider signal detection across top 20 markets — identifies volume spikes and anomalies",
+            "description": "Insider signal detection across top 20 markets",
             "tags": [
                 "signals",
                 "insider",
@@ -106,9 +125,7 @@
                 "bazaar": {
                     "discoverable": true,
                     "category": "data-analytics",
-                    "inputSchema": {
-                        "queryParams": {}
-                    }
+                    "inputSchema": {}
                 }
             }
         },
