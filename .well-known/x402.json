@@ -1,7 +1,7 @@
 {
     "name": "PolyMind",
-    "description": "Real-time institutional-grade Polymarket intelligence for AI agents. Sub-second trade detection and AI edge analysis.",
-    "version": "1.2.0",
+    "description": "Real-time institutional-grade Polymarket intelligence for AI agents.",
+    "version": "1.3.0",
     "endpoints": [
         {
             "path": "https://polymind-production-c405.up.railway.app/markets/hot",
@@ -9,11 +9,9 @@
             "price": "0.005",
             "currency": "USDC",
             "chain": "eip155:8453",
-            "description": "Top 20 Polymarket markets by 24h volume with live prices and metadata",
+            "description": "Top 20 Polymarket markets with live prices",
             "tags": [
                 "polymarket",
-                "prediction",
-                "markets",
                 "trading"
             ],
             "extensions": {
@@ -21,137 +19,12 @@
                     "discoverable": true,
                     "category": "defi-trading",
                     "inputSchema": {
-                        "queryParams": {
+                        "type": "object",
+                        "properties": {
                             "limit": {
                                 "type": "integer",
-                                "description": "Number of markets to return (max 50, default 20)",
-                                "required": false
+                                "default": 20
                             }
-                        }
-                    }
-                }
-            }
-        },
-        {
-            "path": "https://polymind-production-c405.up.railway.app/markets/search",
-            "method": "GET",
-            "price": "0.005",
-            "currency": "USDC",
-            "chain": "eip155:8453",
-            "description": "Search Polymarket markets by keyword",
-            "tags": [
-                "search",
-                "prediction",
-                "markets"
-            ],
-            "extensions": {
-                "bazaar": {
-                    "discoverable": true,
-                    "category": "defi-trading",
-                    "inputSchema": {
-                        "queryParams": {
-                            "q": {
-                                "type": "string",
-                                "description": "Search query keyword",
-                                "required": true
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        {
-            "path": "https://polymind-production-c405.up.railway.app/analyze",
-            "method": "GET",
-            "price": "0.03",
-            "currency": "USDC",
-            "chain": "eip155:8453",
-            "description": "AI Market analysis engine portal",
-            "tags": [
-                "analysis",
-                "ai"
-            ],
-            "extensions": {
-                "bazaar": {
-                    "discoverable": true,
-                    "category": "ai-machine-learning",
-                    "inputSchema": {}
-                }
-            }
-        },
-        {
-            "path": "https://polymind-production-c405.up.railway.app/analyze/{market_id}",
-            "method": "GET",
-            "price": "0.03",
-            "currency": "USDC",
-            "chain": "eip155:8453",
-            "description": "Full multi-model AI analysis of a specific market",
-            "tags": [
-                "analysis",
-                "ai",
-                "edge",
-                "recommendation"
-            ],
-            "extensions": {
-                "bazaar": {
-                    "discoverable": true,
-                    "category": "ai-machine-learning",
-                    "inputSchema": {
-                        "pathParams": {
-                            "market_id": {
-                                "type": "string",
-                                "description": "Polymarket market ID",
-                                "required": true
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        {
-            "path": "https://polymind-production-c405.up.railway.app/signals",
-            "method": "GET",
-            "price": "0.02",
-            "currency": "USDC",
-            "chain": "eip155:8453",
-            "description": "Insider signal detection across top 20 markets",
-            "tags": [
-                "signals",
-                "insider",
-                "alpha",
-                "volume-spike"
-            ],
-            "extensions": {
-                "bazaar": {
-                    "discoverable": true,
-                    "category": "data-analytics",
-                    "inputSchema": {}
-                }
-            }
-        },
-        {
-            "path": "https://polymind-production-c405.up.railway.app/signals/portfolio/scan",
-            "method": "POST",
-            "price": "0.10",
-            "currency": "USDC",
-            "chain": "eip155:8453",
-            "description": "Full portfolio risk analysis for your open positions",
-            "tags": [
-                "portfolio",
-                "risk",
-                "analysis"
-            ],
-            "extensions": {
-                "bazaar": {
-                    "discoverable": true,
-                    "category": "data-analytics",
-                    "inputSchema": {
-                        "body": {
-                            "type": "array",
-                            "items": {
-                                "type": "object"
-                            },
-                            "description": "List of open positions"
                         }
                     }
                 }
@@ -159,8 +32,7 @@
         }
     ],
     "chains": [
-        "eip155:8453",
-        "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"
+        "eip155:8453"
     ],
     "facilitators": [
         "https://api.cdp.coinbase.com/platform/v2/x402"
