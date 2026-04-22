@@ -1,7 +1,8 @@
 {
     "name": "PolyMind",
     "description": "Real-time institutional-grade Polymarket intelligence for AI agents.",
-    "version": "1.4.0",
+    "image": "https://vibehall-portal.vercel.app/og-image.png",
+    "version": "1.5.0",
     "endpoints": [
         {
             "path": "https://polymind-production-c405.up.railway.app/",
